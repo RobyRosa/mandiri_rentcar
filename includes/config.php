@@ -3,7 +3,7 @@
 $myHost	= "localhost";
 $myUser	= "root";
 $myPass	= "";
-$myDbs	= "rental_eria";
+$myDbs	= "mandiri_rentcar";
 
 $koneksidb = mysqli_connect( $myHost, $myUser, $myPass, $myDbs);
 if (! $koneksidb) {

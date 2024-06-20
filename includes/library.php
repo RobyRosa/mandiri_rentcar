@@ -3,36 +3,38 @@
 date_default_timezone_set("Asia/Jakarta");
 
 # Fungsi untuk membuat kode automatis
-function buatKode($tabel, $inisial){
-	global $koneksidb;
-	$struktur	= mysqli_query($koneksidb, "SELECT * FROM $tabel LIMIT 1");
-	$field		= mysqli_fetch_field_direct($struktur,0)->name;
+function buatKode($tabel, $inisial) {
+    global $koneksidb;
 
-	// membaca panjang kolom kunci (cara 1)
-	$panjang	= mysqli_fetch_field_direct($struktur,0)->length;
-	
-	// membaca panjang kolom kunci (cara 2)
-	//$hasil 	= mysql_fetch_field($struktur,0);
-	//$panjang	= $hasil->max_length; 
-	
+    // Mendapatkan informasi struktur tabel
+    $struktur = mysqli_query($koneksidb, "SHOW COLUMNS FROM $tabel");
+    $field_name = '';
+    $field_length = 0;
 
- 	$qry	= mysqli_query($koneksidb, "SELECT MAX(".$field.") FROM ".$tabel);
- 	$row	= mysqli_fetch_array($qry); 
- 	if ($row[0]=="") {
- 		$angka=0;
-	}
- 	else {
- 		$angka		= substr($row[0], strlen($inisial));
- 	}
-	
- 	$angka++;
- 	$angka	=strval($angka); 
- 	$tmp	="";
- 	for($i=1; $i<=($panjang-strlen($inisial)-strlen($angka)); $i++) {
-		$tmp=$tmp."0";	
-	}
- 	return $inisial.$tmp.$angka;
+    // Menyimpan nama field dan panjang kolom
+    while ($row = mysqli_fetch_assoc($struktur)) {
+        if ($row['Key'] == 'PRI') { // Pastikan field ini adalah primary key
+            $field_name = $row['Field'];
+            $field_length = $row['Length'];
+            break;
+        }
+    }
+
+    // Query untuk mendapatkan kode terbesar
+    $qry = mysqli_query($koneksidb, "SELECT MAX($field_name) AS max_code FROM $tabel");
+    $row = mysqli_fetch_array($qry);
+    
+    // Menghitung angka berdasarkan kode terbesar yang ada
+    $angka = ($row['max_code'] == null) ? 0 : substr($row['max_code'], strlen($inisial));
+    $angka = intval($angka) + 1;
+
+    // Format angka agar sesuai panjang kolom
+    $angka_str = strval($angka);
+    $tmp = str_repeat('0', $field_length - strlen($inisial) - strlen($angka_str));
+    
+    return $inisial . $tmp . $angka_str;
 }
+
 
 # Fungsi untuk membalik tanggal dari format Indo (d-m-Y) -> English (Y-m-d)
 function InggrisTgl($tanggal){

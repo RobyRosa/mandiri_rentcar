@@ -44,22 +44,38 @@ include('includes/config.php');
 <!-- Google-Font-->
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 <style>
-    .errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-    background: #fff;
-    border-left: 4px solid #dd3d36;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-    background: #fff;
-    border-left: 4px solid #5cb85c;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
+    .form-control {
+        padding-left: 40px;
+    }
+    .input-icon {
+        position: relative;
+    }
+    .input-icon > i {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-container {
+        background: #f7f7f7;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .btn-custom {
+        background-color: #5cb85c;
+        color: #fff;
+    }
+    .btn-custom:hover {
+        background-color: #4cae4c;
+        color: #fff;
+    }
+    .checkbox label a {
+        color: #5cb85c;
+    }
 </style>
 <script type="text/javascript">
 function checkLetter(theform)
@@ -109,32 +125,40 @@ function checkLetter(theform)
 <section class="user_profile inner_pages">
   <div class="container">
       <div class="user_profile_info">
-		<h6 align="center">Registrasi User</h6>
-		<div class="col-md-12 col-sm-10">
-              <form  method="post" name="theform" action="registact.php" id="theform" onSubmit="return checkLetter(this);" enctype="multipart/form-data">
-                <div class="form-group">
+          <h6 align="center">Registrasi User</h6>
+          <div class="col-md-6 col-md-offset-3 form-container">
+              <form method="post" name="theform" action="registact.php" id="theform" onSubmit="return checkLetter(this);" enctype="multipart/form-data">
+                <div class="form-group input-icon">
+                  <i class="fa fa-user"></i>
                   <input type="text" class="form-control" name="fullname" placeholder="Nama Lengkap" required="required">
                 </div>
-                <div class="form-group">
+                <div class="form-group input-icon">
+                  <i class="fa fa-phone"></i>
                   <input type="number" class="form-control" name="mobileno" placeholder="Nomer Telepon" minlength="10" maxlength="15" required="required">
                 </div>
-                <div class="form-group">
+                <div class="form-group input-icon">
+                  <i class="fa fa-envelope"></i>
                   <input type="email" class="form-control" name="emailid" id="emailid" onBlur="checkAvailability()" placeholder="Alamat Email" required="required">
-                   <span id="user-availability-status" style="font-size:12px;"></span> 
+                  <span id="user-availability-status" style="font-size:12px;"></span> 
                 </div>
-                <div class="form-group">
+                <div class="form-group input-icon">
+                  <i class="fa fa-home"></i>
                   <input type="text" class="form-control" name="alamat" placeholder="Alamat" required="required">
                 </div>
                 <div class="form-group">
-					Upload Foto KTP<span style="color:red">*</span><input type="file" name="img1" accept="image/*" required>
-				</div>
-                <div class="form-group">
-					Upload Foto KK<span style="color:red">*</span><input type="file" name="img2" accept="image/*" required>
-				</div>
-                <div class="form-group">
-                  <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required="required">
+                    <label>Upload Foto KTP <span style="color:red">*</span></label>
+                    <input type="file" class="form-control" name="img1" accept="image/*" required>
                 </div>
                 <div class="form-group">
+                    <label>Upload Foto KK <span style="color:red">*</span></label>
+                    <input type="file" class="form-control" name="img2" accept="image/*" required>
+                </div>
+                <div class="form-group input-icon">
+                  <i class="fa fa-lock"></i>
+                  <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required="required">
+                </div>
+                <div class="form-group input-icon">
+                  <i class="fa fa-lock"></i>
                   <input type="password" class="form-control" id="conf" name="conf" placeholder="Konfirmasi Password" required="required">
                 </div>
                 <div class="form-group checkbox">
@@ -142,18 +166,17 @@ function checkLetter(theform)
                   <label for="terms_agree">Saya Setuju dengan <a href="#">Syarat dan Ketentuan yang berlaku</a></label>
                 </div>
                 <div class="form-group">
-                  <input type="submit" value="Sign Up"class="btn btn-block">
+                  <input type="submit" value="Sign Up" class="btn btn-custom btn-block">
                 </div>
               </form>
-              
-			<div class="modal-footer text-center">
-			<p>Sudah punya akun? <a href="#loginform" data-toggle="modal" data-dismiss="modal">Login Disini</a></p>
-			</div>
-
-     </div>
-	</div>
-</div>
+              <div class="text-center">
+                  <p>Sudah punya akun? <a href="#loginform" data-toggle="modal" data-dismiss="modal">Login Disini</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
 </section>
+
 <!--/Profile-setting--> 
 
 <<!--Footer -->
