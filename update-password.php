@@ -58,9 +58,8 @@ header('location:index.php');
   <div class="container">
 	<div class="user_profile_info">
 		<div class="col-md-12 col-sm-10">
-        <?php
-			$mail=$_SESSION['ulogin'];
-		?>
+        <?php $mail=$_SESSION['ulogin'];?>
+        <div class="card p-4 shadow-sm">
           <form  method="post" action="update-passwordact.php">
             <div class="form-group">
               <label class="control-label">Current Password</label>
@@ -80,6 +79,7 @@ header('location:index.php');
             </div>
           </form>
 		 </div>
+  </div>
 	</div>
 </div>
 </section>

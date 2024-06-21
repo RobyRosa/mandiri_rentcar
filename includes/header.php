@@ -21,7 +21,7 @@
                 <i class="fa fa-phone" aria-hidden="true"></i>
               </div>
               <p class="uppercase_text">For Services Call Us: </p>
-              <a href="tel:+62-812-3344-5551">+62-812-3344-5551</a>
+              <a href="tel:+62-812-3344-5551">+62-822-3264-6324</a>
             </div>
             <?php if(strlen($_SESSION['ulogin']) == 0) { ?>
               <div class="login_btn">
