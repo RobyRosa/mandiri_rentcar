@@ -14,14 +14,14 @@
                 <i class="fa fa-envelope" aria-hidden="true"></i>
               </div>
               <p class="uppercase_text">For Support Mail us: </p>
-              <a href="mailto:rental_mobil@gmail.com">rental_mobil@gmail.com</a>
+              <a href="mailto:rental_mobil@gmail.com">info@mandiri.rentcar.com</a>
             </div>
             <div class="header_widgets">
               <div class="circle_icon">
                 <i class="fa fa-phone" aria-hidden="true"></i>
               </div>
               <p class="uppercase_text">For Services Call Us: </p>
-              <a href="tel:+62-812-3344-5551">+62-822-3264-6324</a>
+              <a href="tel:+62-812-3344-5551">+62-877-626-2057</a>
             </div>
             <?php if(strlen($_SESSION['ulogin']) == 0) { ?>
               <div class="login_btn">
