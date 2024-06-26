@@ -59,26 +59,26 @@ header('location:index.php');
 	<div class="user_profile_info">
 		<div class="col-md-12 col-sm-10">
         <?php $mail=$_SESSION['ulogin'];?>
-        <div class="card p-4 shadow-sm">
-          <form  method="post" action="update-passwordact.php">
-            <div class="form-group">
-              <label class="control-label">Current Password</label>
-			  <input class="form-control white_bg" name="mail" id="mail" type="hidden" value="<?php echo $mail;?>" required>
-              <input class="form-control white_bg" name="pass" id="pass" type="password"  required>
-            </div>
-            <div class="form-group">
-              <label class="control-label">New Password</label>
-              <input class="form-control white_bg" name="new" id="new" type="password"  required>
-            </div>
-            <div class="form-group">
-              <label class="control-label">Confirm Password</label>
-              <input class="form-control white_bg" name="confirm" id="confirm" type="password"  required>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn">Update Password <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
-            </div>
-          </form>
-		 </div>
+        <div class="card p-4 shadow-sm" style="max-width: 400px; margin: auto; background-color: #f8f9fa; border-radius: 10px;">
+  <form method="post" action="update-passwordact.php">
+    <div class="form-group">
+      <label class="control-label font-weight-bold">Current Password</label>
+      <input class="form-control white_bg" name="mail" id="mail" type="hidden" value="<?php echo $mail;?>" required>
+      <input class="form-control white_bg" name="pass" id="pass" type="password" placeholder="Enter your current password" required>
+    </div>
+    <div class="form-group">
+      <label class="control-label font-weight-bold">New Password</label>
+      <input class="form-control white_bg" name="new" id="new" type="password" placeholder="Enter your new password" required>
+    </div>
+    <div class="form-group">
+      <label class="control-label font-weight-bold">Confirm Password</label>
+      <input class="form-control white_bg" name="confirm" id="confirm" type="password" placeholder="Confirm your new password" required>
+    </div>
+    <div class="form-group text-center">
+    <button type="submit" class="btn">Update Password <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+    </div>
+  </form>
+</div>
   </div>
 	</div>
 </div>

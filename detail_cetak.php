@@ -61,16 +61,16 @@ $tglhasil = date("Y-m-d",$tgl);
 				<tbody>
 					<tr>
 						<td rowspan="3" width="16%" class="text-center">
-							<img src="assets/images/cat-profile.png" alt="logo-dkm" width="80" />
+							<img src="assets/images/mandiri_rentcar.png" alt="logo-dkm" width="80" />
 						</td>
-						<td class="text-center"><h3>Rental Mobil</h3></td>
+						<td class="text-center"><h3>Mandiri Rentcar</h3></td>
 						<td rowspan="3" width="16%">&nbsp;</td>
 					</tr>
 					<tr>
 						<td class="text-center"><h2>Rental Mobil</h2></td>
 					</tr>
 					<tr>
-						<td class="text-center">Jl. Kemanggisan Raya No.19, RT.4/RW.13, Kemanggisan, Kec. Palmerah, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11480 </td>
+						<td class="text-center">Jl. Rw. Dolar No.65, RT.003/RW.007, Jatiraden, Kec. Jatisampurna, Kota Bks, Jawa Barat 17433</td>
 					</tr>
 				</tbody>
 			</table>
