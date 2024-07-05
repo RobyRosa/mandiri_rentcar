@@ -1,7 +1,7 @@
 # Rental-Mobil
 Rental Mobil Berbasis website ini memiliki tampilan yang sederhana dan fitur yang mampu berfungsi dengan baik.
 
-To access admin page, add url /admin. Example http://localhost/rental_eria/admin
+To access admin page, add url /admin. Example http://localhost/sirm/mandiri_rentcar/admin
 
 ## Tampilan Aplikasi
 ![ss](images/ss1.png)

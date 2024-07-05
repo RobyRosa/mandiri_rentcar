@@ -26,7 +26,6 @@ if(mysqli_num_rows($query)>0){
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-
 	<title>Rental Mobil | Admin Login</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -41,9 +40,12 @@ if(mysqli_num_rows($query)>0){
 
 
 	<style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
         body {
-            background: linear-gradient(to right, #6a11cb, #2575fc);
+            background: #000;
             font-family: 'Roboto', sans-serif;
+            color: #fff;
         }
         .form-content {
             display: flex;
@@ -53,14 +55,20 @@ if(mysqli_num_rows($query)>0){
         }
         .container {
             max-width: 400px;
-            background: #fff;
+            background: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
         .form-control {
             border-radius: 30px;
             padding: 10px 20px;
+            background: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+        }
+        .form-control::placeholder {
+            color: #ccc;
         }
         .btn-primary {
             border-radius: 30px;
@@ -68,9 +76,11 @@ if(mysqli_num_rows($query)>0){
             border: none;
             padding: 10px 20px;
             font-size: 16px;
+            box-shadow: 0 0 20px #2575fc;
         }
         .btn-primary:hover {
             background: linear-gradient(to right, #2575fc, #6a11cb);
+            box-shadow: 0 0 25px #6a11cb;
         }
         .text-light {
             color: #fff;
@@ -91,9 +101,13 @@ if(mysqli_num_rows($query)>0){
             padding-bottom: 1.5rem;
         }
         .bk-light {
-            background: #f7f7f7;
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        label {
+            text-shadow: 0 0 5px #fff;
         }
     </style>
 </head>
@@ -103,7 +117,7 @@ if(mysqli_num_rows($query)>0){
 	<div class="login-page bk-img" style="background-image: url(img/bg_login.png);">
 	<div class="form-content">
         <div class="container">
-            <h1 class="text-center text-bold text-blue mt-4x">Sign in</h1>
+            <h1 class="text-center text-bold text-light mt-4x">Sign in</h1>
             <div class="well row pt-2x pb-3x bk-light">
                 <div class="col-md-12">
                     <form method="post">
