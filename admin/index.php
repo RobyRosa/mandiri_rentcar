@@ -36,36 +36,89 @@ if(mysqli_num_rows($query)>0){
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+	<style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-control {
+            border-radius: 30px;
+            padding: 10px 20px;
+        }
+        .btn-primary {
+            border-radius: 30px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+        }
+        .text-light {
+            color: #fff;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+        .mt-4x {
+            margin-top: 2rem;
+        }
+        .pt-2x {
+            padding-top: 1rem;
+        }
+        .pb-3x {
+            padding-bottom: 1.5rem;
+        }
+        .bk-light {
+            background: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
 	
 	<div class="login-page bk-img" style="background-image: url(img/bg_login.png);">
-		<div class="form-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold text-light mt-4x">Sign in</h1>
-						<div class="well row pt-2x pb-3x bk-light">
-							<div class="col-md-8 col-md-offset-2">
-								<form method="post">
+	<div class="form-content">
+        <div class="container">
+            <h1 class="text-center text-bold text-blue mt-4x">Sign in</h1>
+            <div class="well row pt-2x pb-3x bk-light">
+                <div class="col-md-12">
+                    <form method="post">
+                        <label for="username" class="text-uppercase text-sm">Username</label>
+                        <input type="text" placeholder="Username" name="username" class="form-control mb" id="username">
 
-									<label for="" class="text-uppercase text-sm">Username </label>
-									<input type="text" placeholder="Username" name="username" class="form-control mb">
+                        <label for="password" class="text-uppercase text-sm">Password</label>
+                        <input type="password" placeholder="Password" name="password" class="form-control mb" id="password">
 
-									<label for="" class="text-uppercase text-sm">Password</label>
-									<input type="password" placeholder="Password" name="password" class="form-control mb">
-
-								
-
-									<button class="btn btn-primary btn-block" name="login" type="submit">LOGIN</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                        <button class="btn btn-primary btn-block" name="login" type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 	</div>
 	
 	<!-- Loading Scripts -->
